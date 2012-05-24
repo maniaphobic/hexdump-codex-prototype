@@ -3,16 +3,18 @@
 ## Overview
 
 The }hexdump{ Foundation Historian is pleased to offer this
-application to decode documents from the Foundation's historical
-archive.  Each document is significant to the development and
-implementation of the Foundation's mission.
+application allowing authorized Foundation associates to decode
+documents from the Foundation's historical archive.  These documents
+are significant to the development and implementation of the
+Foundation's mission and we feel broader access will provide better
+appreciation for the Foundation's vitally important work.
 
 All archived documents are encrypted and the appropriate decryption
 key is required to decode each document.
 
 ## Requirements
 
-* Python 2.6 or or 2.7
+* Python 2.6 or 2.7
 
 ## Usage
 
