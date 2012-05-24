@@ -4,11 +4,11 @@
 
 The }hexdump{ Foundation Historian is pleased to offer this
 application to decode documents from the Foundation's historical
-archive.  Each archived document is significant to the Foundation's
-development.
+archive.  Each document is significant to the development and
+implementation of the Foundation's mission.
 
-Note that the archived documents are encrypted and the appropriate
-decryption key is required to decode each document.
+All archived documents are encrypted and the appropriate decryption
+key is required to decode each document.
 
 ## Requirements
 
