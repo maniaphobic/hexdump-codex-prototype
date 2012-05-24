@@ -17,10 +17,10 @@ import sys
 #
 
 #
-# Codex repository objects possess knowledge of enciphered codex files
+# Codex archive objects possess knowledge of enciphered codex files
 #
 
-class CodexRepository:
+class CodexArchive:
 
     def __init__(self, base_url=None):
         self.base_url		= base_url
@@ -36,7 +36,7 @@ class CodexRepository:
         pass
 
 #
-# Cryptographic objects en{code,crypt}/de{code,crypt}
+# Cryptographic objects en{code,crypt}/de{code,crypt} documents
 #
 
 from base64 import b64encode, b64decode
@@ -143,37 +143,37 @@ class Mysteria:
 #
 
 #
-# Import libraries
-#
-
-import sys
-
-#
-#
+# Announce the decoder
+# Read the archive URL from the command line or prompt for it
+# Read the decryption key from the command line or prompt for it
 #
 
 print("""
--=| }hexdump{ CODEX RENDERER |=-
+-=| }hexdump{ FOUNDATION HISTORICAL ARCHIVE DECODER |=-
 
 """)
 
-print("Enter codex repository URL: ", end='')
-codex_repo_url			= sys.stdin.readline().lstrip().rstrip()
-#DEBUG#codex_repo_url			= 'http://maniaphobic.org/hexdump/' #DEBUG#
-print("Enter decryption key: ", end='')
-decrypt_key			= sys.stdin.readline().lstrip().rstrip()
-#DEBUG#decrypt_key			= '$SenTieNt_ObseRver*' #DEBUG#
-print()
+try:
+    codex_archive_url		= sys.argv[1]
+except:
+    print("Enter codex archive URL: ", end='')
+    codex_archive_url		= sys.stdin.readline().lstrip().rstrip()
+
+try:
+    decrypt_key			= sys.argv[2]
+except:
+    print("Enter decryption key: ", end='')
+    decrypt_key			= sys.stdin.readline().lstrip().rstrip()
 
 #
 # Instantiate objects:
-#   - Codex repository
+#   - Codex archive
 #   - Mysteria generator
 #   - URL fetcher
 #
 
-codex_repo			= CodexRepository(codex_repo_url)
-codex_repo.debug		= True
+codex_archive			= CodexArchive(codex_archive_url)
+codex_archive.debug		= True
 mysteria			= Mysteria()
 mysteria.debug			= True
 fetcher				= Fetcher()
@@ -194,7 +194,7 @@ for mystery in mysteria.generate_zeta():
     # Exit the loop upon error
     #
 
-    fetcher.url			= codex_repo.assemble_url(mystery)
+    fetcher.url			= codex_archive.assemble_url(mystery)
     try:
         ciphertext_list.append(fetcher.fetch())
     except:
