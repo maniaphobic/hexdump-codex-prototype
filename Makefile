@@ -13,7 +13,7 @@ HDF_MEMO_ENCRYPTED_SPLIT	= data/hdf-memo/encrypted/split
 HDF_MEMO_ENCRYPTED_ZETA		= data/hdf-memo/encrypted/zeta
 MEMO_SPLITTER			= $(BIN_DIR)/split-memo
 MEMO_ENCRYPTER			= $(BIN_DIR)/cryptxor
-REPO_PATH			= elip001:/local/www/site01/content/hexdump
+ARCHIVE_PATH			= elip001:/local/www/site01/content/hexdump/1/645
 SPLIT_PREFIX			= hdf_
 
 #
@@ -38,7 +38,7 @@ split split-encrypted-memo: $(HDF_MEMO_ENCRYPTED)
 	$(MEMO_SPLITTER) $(HDF_MEMO_ENCRYPTED) $(HDF_MEMO_ENCRYPTED_SPLIT) $(SPLIT_PREFIX)
 
 upload upload-zeta:
-	rsync -av $(HDF_MEMO_ENCRYPTED_ZETA)/ $(REPO_PATH)
+	rsync -av $(HDF_MEMO_ENCRYPTED_ZETA)/ $(ARCHIVE_PATH)
 
 clean:
 	rm $(HDF_MEMO_ENCRYPTED) $(HDF_MEMO_ENCRYPTED_SPLIT)/* $(HDF_MEMO_ENCRYPTED_ZETA)/*
