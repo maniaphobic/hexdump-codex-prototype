@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #________________________________________
-# Date created:			Thursday, 15 March 2012
+# Date created:			Tuesday, 02 October 2001
 #
 
 
@@ -41,7 +41,6 @@ class CodexArchive:
 
 from base64 import b64encode, b64decode
 from itertools import izip, cycle
-import sys
 
 class Crypto:
 
@@ -67,7 +66,6 @@ class Crypto:
 # The utility class fetches URLs
 #
 
-import sys
 import urllib2
 
 class Fetcher:
@@ -107,7 +105,6 @@ class Mysteria:
     #
 
     def generate(self):
-        import sys
         sys.path.append('lib')
         import mpmath
         root_list		= {}
