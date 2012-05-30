@@ -107,9 +107,6 @@ class Mysteria:
     #
 
     def generate(self):
-        pass
-
-    def generate_zeta(self):
         import sys
         sys.path.append('lib')
         import mpmath
@@ -186,7 +183,7 @@ fetcher.debug			= True
 
 ciphertext_list			= []
 
-for mystery in mysteria.generate_zeta():
+for mystery in mysteria.generate():
 
     #
     # Assemble the codex URL
