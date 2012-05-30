@@ -81,11 +81,11 @@ class Fetcher:
             sys.stderr.write("[NOTICE] Fetching URL '%s'.\n" % (self.url))
         try:
             url_handle		= urllib2.urlopen(self.url)
-        except urllib2.HTTPError, e:
+        except urllib2.HTTPError as e:
             if self.debug:
                 sys.stderr.write("[ERROR] Received HTTP code %d, '%s', fetching URL '%s'\n" % (e.code, e.msg, self.url))
             raise e
-        except urllib2.URLError, e:
+        except urllib2.URLError as e:
             if self.debug:
                 sys.stderr.write("[ERROR] '%s'\n" % (e.args))
             raise e
@@ -132,9 +132,9 @@ class Mysteria:
                     else:
                         if self.debug:
                             sys.stderr.write("[NOTICE] Irrelevant zero, skipping.\n")
-            except ValueError, e:
+            except ValueError as e:
                 pass
-            except OverflowError, e:
+            except OverflowError as e:
                 pass
 
 
