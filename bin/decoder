@@ -17,7 +17,7 @@ import sys
 #
 
 #
-# Codex archive objects possess knowledge of enciphered codex files
+# CodexArchive objects possess knowledge of enciphered codex files
 #
 
 class CodexArchive:
@@ -32,11 +32,9 @@ class CodexArchive:
             sys.stderr.write("[NOTICE] Assembled URL '%s'.\n" % assembled_url)
         return assembled_url
 
-    def display(self):
-        pass
 
 #
-# Cryptographic objects en{code,crypt}/de{code,crypt} documents
+# Crypto objects en{code,crypt}/de{code,crypt} documents
 #
 
 from base64 import b64encode, b64decode
@@ -63,7 +61,7 @@ class Crypto:
         return self.ciphertext
 
 #
-# The utility class fetches URLs
+# Fetcher objects retrieve URLs
 #
 
 import urllib2
@@ -92,17 +90,13 @@ class Fetcher:
         return content.lstrip().rstrip()
 
 #
-# This class generates mysteria for indexing the codex fragments
+# Mysteria objects generate codex fragment indices
 #
 
 class Mysteria:
 
     def __init__(self):
         self.debug		= False
-
-    #
-    # Generate mysteria
-    #
 
     def generate(self):
         sys.path.append('lib')
@@ -185,7 +179,7 @@ for mystery in mysteria.generate():
     #
     # Assemble the codex URL
     # Attempt to fetch the URL, appending to the ciphertext list if successful
-    # Exit the loop upon error
+    # Exit the loop on any error
     #
 
     fetcher.url			= codex_archive.assemble_url(mystery)
@@ -207,6 +201,6 @@ crypto_obj.ciphertext		= "".join(ciphertext_list)
 print(crypto_obj.decrypt())
 
 #
-#
+# Finis
 #
 
