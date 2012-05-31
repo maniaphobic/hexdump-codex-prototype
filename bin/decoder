@@ -60,6 +60,7 @@ class Crypto:
         self.ciphertext		= b64encode(''.join([chr(ord(x) ^ ord(y)) for(x,y) in izip(self.plaintext, cycle(self.key))]))
         return self.ciphertext
 
+
 #
 # Fetcher objects retrieve URLs
 #
@@ -88,6 +89,7 @@ class Fetcher:
         content			= url_handle.read().lstrip().rstrip()
         url_handle.close()
         return content.lstrip().rstrip()
+
 
 #
 # Mysteria objects generate codex fragment indices
@@ -120,9 +122,7 @@ class Mysteria:
                     else:
                         if self.debug:
                             sys.stderr.write("[NOTICE] Irrelevant zero, skipping.\n")
-            except ValueError as e:
-                pass
-            except OverflowError as e:
+            except (ValueError, OverflowError):
                 pass
 
 
