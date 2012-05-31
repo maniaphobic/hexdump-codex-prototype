@@ -25,3 +25,11 @@ Invoke the decoder as follows:
 The application will prompt for the document URL and decryption key if
 neither is specified.
 
+## Acknowledgments
+
+This application bundles the mpmath multiprecision floating-point
+arithmetic library, available from https://code.google.com/p/mpmath/ .
+
+The Foundation Historian sincerely acknowledges the many individuals
+who contributed to the development and testing of this application.
+
