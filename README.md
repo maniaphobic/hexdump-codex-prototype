@@ -30,6 +30,6 @@ neither is specified.
 This application bundles the mpmath multiprecision floating-point
 arithmetic library, available from https://code.google.com/p/mpmath/ .
 
-The Foundation Historian sincerely acknowledges the many individuals
+The Foundation Historian gratefully acknowledges the many individuals
 who contributed to the development and testing of this application.
 
